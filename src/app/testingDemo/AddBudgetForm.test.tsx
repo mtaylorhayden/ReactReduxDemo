@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import { AddBudgetForm } from "./features/Budget/AddBudgetForm";
+import { AddBudgetForm } from "../features/Budget/AddBudgetForm";
 
 test("renders correct content", () => {
     const { getByText, getByLabelText } = render(<AddBudgetForm />);
 
+    // this will fail if not true
     getByText("Create your budget!");
     getByLabelText("Car Payment");
 })

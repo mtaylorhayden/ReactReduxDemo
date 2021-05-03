@@ -8,7 +8,6 @@ const collateralSlice = createSlice({
     name: 'collateral',
     initialState,
     reducers: {
-        //todo change this name to ADDED
         collateralAdded: {
             reducer(state,action){
                 state.push(action.payload)
