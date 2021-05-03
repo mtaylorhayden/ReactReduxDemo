@@ -1,57 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { AddBudgetForm } from './app/features/Budget/AddBudgetForm';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
+import { AddCollateralForm } from './app/features/Collateral/AddCollateralForm'
+//import { AddLoanForm } from './app/features/Loans/AddLoanForm';
+import { useSelector } from 'react-redux';
+import store from './app/store';
+import AddLoanForm from '../src/app/features/Loans/AddLoanForm'
+
+
 
 function App() {
+  // is this really how i have to get the state for the loan ?
+  // you have a State object because you pass the store to the app in index.js?
+  //console.log(this.props);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Route exact={true} path="/" render={() => (
+            <AddBudgetForm />
+          )}/>
+        </header>
+        <Route exact={true} path="/Collateral/AddCollateralForm" component={AddCollateralForm}/>
+        <Route exact={true} path="/Loans/AddLoanForm" component={AddLoanForm} />
+      </div>
+    </Router>
   );
 }
 
