@@ -1,13 +1,7 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
 
 const initialState = [
-{  collateralType: "Real Estate",
-estimatedWorth: "2000",
-id: "4aL7XtEpJfs8u9a4jSRVt"}
-    // {   id: nanoid(),
-    //     collateralType: '',
-    //     estimatedWorth: ''
-    // }
+
 ]
 
 const collateralSlice = createSlice({
@@ -15,7 +9,7 @@ const collateralSlice = createSlice({
     initialState,
     reducers: {
         //todo change this name to ADDED
-        collateralUpdated: {
+        collateralAdded: {
             reducer(state,action){
                 state.push(action.payload)
             },
@@ -32,6 +26,6 @@ const collateralSlice = createSlice({
     }
 })
 
-export const { collateralUpdated } = collateralSlice.actions 
+export const { collateralAdded } = collateralSlice.actions 
 
 export default collateralSlice.reducer

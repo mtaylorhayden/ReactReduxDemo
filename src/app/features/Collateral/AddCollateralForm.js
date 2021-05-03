@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { collateralUpdated } from './CollateralsSlice'
+import { collateralAdded } from './CollateralsSlice'
 import { Link } from 'react-router-dom'
 
 
@@ -16,7 +16,7 @@ export const AddCollateralForm = () => {
 
     const onAddCollateralClick = () => {
         if (collateralType && estimatedWorth){
-        dispatch(collateralUpdated(collateralType, estimatedWorth))
+        dispatch(collateralAdded(collateralType, estimatedWorth))
             setCollateralType('')
             setEstimatedWorth('')
         }

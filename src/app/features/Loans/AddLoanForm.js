@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from "react-redux";
 import { loanAccepted } from "./loansSlice"
-import { Redirect } from 'react-router-dom'
-import { AddBudgetForm } from '../Budget/AddBudgetForm'
-
 
 class AddLoanForm extends React.Component {
     constructor(props){
